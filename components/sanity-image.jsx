@@ -1,6 +1,5 @@
-// import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import Image from 'next/image'
-import { imgBuilder } from '~/lib/sanity-client'
+import { imgBuilder } from '~/lib/sanity.client'
 
 export const SanityImage = ({ src, height, width, alt, ...rest }) => {
   return (
