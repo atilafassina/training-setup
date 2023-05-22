@@ -48,5 +48,5 @@ This template has a few adjustments in comparison to default Create Next App. It
 I recommend using `degit` instead of `git clone`, it's faster and doesn't carry over unnecessary repository history. I use [pnpm](https://pnpm.io), but it should work with any package manager.
 
 ```sh
-pnpx atilafassina/training-setup your-directory
+pnpx degit atilafassina/training-setup your-directory
 ```
