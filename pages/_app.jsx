@@ -7,5 +7,8 @@ import '~/lib/globals.css'
  * @returns
  */
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  //@ts-ignore
+  const getLayout = Component.getLayout ?? ((page) => page)
+
+  return getLayout(<Component {...pageProps} />, pageProps)
 }
