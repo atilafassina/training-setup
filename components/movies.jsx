@@ -1,7 +1,7 @@
+import Head from 'next/head'
 import { toPlainText } from '@portabletext/react'
 import Link from 'next/link'
 import { SanityImage } from './sanity-image'
-import Head from 'next/head'
 
 export function Movies({ movies = [{}] }) {
   return (

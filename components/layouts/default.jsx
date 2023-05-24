@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import MetLogo from '../met-logo'
+import { LanguageSwitcher } from './language-switcher'
 
 export function DefaultLayout({ children }) {
   return (
@@ -8,6 +9,7 @@ export function DefaultLayout({ children }) {
         <Link href="/">
           <MetLogo />
         </Link>
+        <LanguageSwitcher />
       </header>
       {children}
       <footer className="mt-5 py-3 grid place-items-center">

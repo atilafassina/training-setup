@@ -10,6 +10,7 @@ import { client } from '~/lib/sanity-client'
 import { PreviewBanner } from '~/components/layouts/preview-banner'
 import { lazy } from 'react'
 import { PreviewSuspense } from 'next-sanity/preview'
+import useI18n from '~/lib/i18n'
 
 const PreviewMovies = lazy(() => import('../components/preview-movies'))
 
@@ -21,12 +22,13 @@ const PreviewMovies = lazy(() => import('../components/preview-movies'))
 export default function Home({ preview, movieList }) {
   // PreviewSuspense shows while movieList is being fetched
   // The fetch happens inside PreviewMovies
+  const t = useI18n()
   return (
     <article>
       <section className="relative max-h-[52rem] overflow-hidden">
         <div className="absolute h-full w-full z-10 text-white flex items-center">
           <div className="w-full ml-12">
-            <h2 className="text-6xl font-serif">This is the Hero section</h2>
+            <h2 className="text-6xl font-serif">{t`hero`}</h2>
             <p className="font-bold text-2xl py-4">This is the hero section.</p>
             <ul className="mt-5 flex gap-20">
               <li>

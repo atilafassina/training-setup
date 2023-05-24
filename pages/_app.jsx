@@ -1,4 +1,6 @@
 // @ts-check
+import { useRouter } from 'next/router'
+import { AlternateUrls } from '~/components/alternate-urls'
 import '~/lib/globals.css'
 
 /**
@@ -9,6 +11,12 @@ import '~/lib/globals.css'
 export default function App({ Component, pageProps }) {
   //@ts-ignore
   const getLayout = Component.getLayout ?? ((page) => page)
-
-  return getLayout(<Component {...pageProps} />, pageProps)
+  const { asPath } = useRouter()
+  return getLayout(
+    <>
+      <AlternateUrls pathname={asPath} />
+      <Component {...pageProps} />
+    </>,
+    pageProps
+  )
 }
