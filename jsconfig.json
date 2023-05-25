@@ -5,5 +5,5 @@
       "~/*": ["./*"]
     }
   },
-  "include": ["i18n.js", "jest.setup.js", "./"]
+  "include": ["i18n.js", "./"]
 }
