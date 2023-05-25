@@ -4,17 +4,7 @@ const i18n = require('./i18n')
 const nextConfig = {
   reactStrictMode: true,
   images: {
-<<<<<<< HEAD
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.sanity.io',
-        pathname: '/**',
-      },
-    ],
-=======
     domains: ['cdn.sanity.io'],
->>>>>>> febe4b4 (checkpoint)
   },
   i18n: {
     defaultLocale: i18n.DEFAULT_LANGUAGE,
