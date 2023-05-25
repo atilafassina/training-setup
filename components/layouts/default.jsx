@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import MetLogo from '../met-logo'
-import { LanguageSwitcher } from './language-switcher'
+import { LanguageSwitcher } from '../language-switcher'
 
 export function DefaultLayout({ children }) {
   return (
