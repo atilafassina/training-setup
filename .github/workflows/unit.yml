@@ -22,5 +22,9 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
-      - name: Run Tests
+        # statical analysis piggy-backing on unit tests
+        # to save CI resources
+      - name: Run Linter
+        run: pnpm lint
+      - name: Run Unit Tests
         run: pnpm test:ci:unit
