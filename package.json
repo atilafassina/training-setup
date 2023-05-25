@@ -9,6 +9,7 @@
     "lint": "next lint",
     "test:unit": "NODE_ENV='development' jest --config=jest.unit.mjs --watch",
     "test:integration": "NODE_ENV='development' jest --config=jest.integration.mjs --watch",
+    "test:e2e": "playwright test",
     "test:ci:unit": "NODE_ENV='development' jest --config=jest.unit.mjs",
     "test:ci:integration": "NODE_ENV='development' jest --config=jest.integration.mjs"
   },
