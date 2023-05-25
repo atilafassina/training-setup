@@ -28,8 +28,10 @@ export default function Home({ preview, movieList }) {
       <section className="relative max-h-[52rem] overflow-hidden">
         <div className="absolute h-full w-full z-10 text-white flex items-center">
           <div className="w-full ml-12">
-            <h2 className="text-6xl font-serif">{t`hero`}</h2>
-            <p className="font-bold text-2xl py-4">This is the hero section.</p>
+            <h1 className="text-6xl font-serif">{t`hero`}</h1>
+            <p className="font-bold text-2xl py-4" data-testid="subtitle">
+              This is the hero section.
+            </p>
             <ul className="mt-5 flex gap-20">
               <li>
                 <button
