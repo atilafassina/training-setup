@@ -105,6 +105,7 @@ export default function Home({ preview, movieList }) {
  * @returns
  */
 Home.getLayout = function getLayout(page, { preview }) {
+  debugger
   return (
     <PreviewBanner preview={preview}>
       <DefaultLayout>{page}</DefaultLayout>
@@ -113,6 +114,8 @@ Home.getLayout = function getLayout(page, { preview }) {
 }
 
 export const getStaticProps = async ({ preview = false }) => {
+  console.log('getStaticProps!!')
+  debugger
   if (preview) {
     return {
       props: { preview },
