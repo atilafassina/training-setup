@@ -1,10 +1,6 @@
 import Link from 'next/link'
 import MetLogo from '../met-logo'
-<<<<<<< HEAD
 import { LanguageSwitcher } from '../language-switcher'
-=======
-import { LanguageSwitcher } from './language-switcher'
->>>>>>> febe4b4 (checkpoint)
 
 export function DefaultLayout({ children }) {
   return (
