@@ -10,7 +10,7 @@ import { client } from '~/lib/sanity-client'
 import { PreviewBanner } from '~/components/layouts/preview-banner'
 import { lazy } from 'react'
 import { PreviewSuspense } from 'next-sanity/preview'
-import useI18n from '~/lib/i18n'
+import useI18n from '~/lib/use-i18n'
 
 const PreviewMovies = lazy(() => import('../components/preview-movies'))
 

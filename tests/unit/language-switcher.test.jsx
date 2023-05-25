@@ -1,4 +1,4 @@
-import { LanguageSwitcher } from './language-switcher.jsx'
+import { LanguageSwitcher } from '~/components/language-switcher.jsx'
 import { render, screen } from '@testing-library/react'
 import i18nConfig from '~/i18n.js'
 

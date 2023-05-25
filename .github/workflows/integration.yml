@@ -1,12 +1,11 @@
-name: Jest Tests
-on: push
-
+name: Integration Tests
+on:
+  deployment_status:
 jobs:
-  build:
+  test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18]
+    if: github.event.deployment_status.state == 'success'
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
@@ -15,12 +14,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
       - name: Run Tests
-        run: pnpm test
+        run: pnpm test:ci:integration
+        env:
+          # This might depend on your test-runner/language binding
+          PREVIEW_URL: ${{ github.event.deployment_status.target_url }}
