@@ -13,6 +13,7 @@ export const LanguageSwitcher = () => {
               href={asPath}
               locale={l}
               className="text-lg font-mono text-neutral-600 hover:text-black self-start"
+              data-testid="locale-link"
             >
               {l}
             </Link>
