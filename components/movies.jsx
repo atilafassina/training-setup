@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { toPlainText } from '@portabletext/react'
 import Link from 'next/link'
 import { SanityImage } from './sanity-image'
 
@@ -30,7 +31,7 @@ export function Movies({ movies = [] }) {
                     <h2 className="text-3xl pb-5">{movie.title}</h2>
                   )}
                 </Link>
-                <span>{'movie title overview'.substring(0, 90)}...</span>
+                <span>{toPlainText(movie.overview).substring(0, 90)}...</span>
               </div>
             </li>
           ))}

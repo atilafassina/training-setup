@@ -1,3 +1,4 @@
+import { PortableText } from '@portabletext/react'
 import Head from 'next/head'
 import { SanityImage } from './sanity-image'
 import { usePreview } from '~/lib/sanity-preview'
@@ -22,7 +23,7 @@ function MovieInfo({ movie }) {
         <h1 className="text-6xl font-serif text-center py-8 ">{movie.title}</h1>
       </header>
       <article className="max-w-prose w-full mx-auto prose">
-        overview movie title
+        <PortableText value={movie.overview} />
       </article>
     </div>
   )
