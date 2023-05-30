@@ -11,7 +11,7 @@ const config = {
   displayName: 'UNIT',
   // Add more setup options before each test is run
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom',
   modulePathIgnorePatterns: [
     '<rootDir>/tests/e2e/',
     '<rootDir>/tests/integration/',
@@ -19,6 +19,9 @@ const config = {
   // clear mocks before each test.
   // same as `jest.clearAllMocks()` after each
   clearMocks: true,
+  // nukes every mock before each test.
+  // same as `jest.resetAllMocks()` after each
+  // resetMocks: true,
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
