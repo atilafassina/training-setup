@@ -1,15 +1,10 @@
-import { PortableText } from '@portabletext/react'
-import Head from 'next/head'
+import PortableText from './portable-text'
 import { SanityImage } from './sanity-image'
-import { usePreview } from '~/lib/sanity-preview'
+import { MovieDetailsQuery } from '~/lib/queries'
+import { client } from '~/lib/sanity-client'
 
-export default function PreviewMovie({ query, queryParams }) {
-  const data = usePreview(null, query, queryParams)
-
-  return <Movie movie={data} />
-}
-
-function MovieInfo({ movie }) {
+export default async function Movie({ slug }) {
+  const movie = await client.fetch(MovieDetailsQuery, { slug })
   return (
     <div>
       <header className="grid place-items-center">
@@ -23,19 +18,8 @@ function MovieInfo({ movie }) {
         <h1 className="text-6xl font-serif text-center py-8 ">{movie.title}</h1>
       </header>
       <article className="max-w-prose w-full mx-auto prose">
-        <PortableText value={movie.overview} />
+        <PortableText portableText={movie.overview} />
       </article>
     </div>
-  )
-}
-
-export function Movie({ movie }) {
-  return (
-    <>
-      <Head>
-        <title>{movie.title}</title>
-      </Head>
-      <MovieInfo movie={movie} />
-    </>
   )
 }

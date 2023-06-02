@@ -8,16 +8,22 @@ export const config = {
 
 /**
  *
- * @param {import('next/server').NextRequest} _req
+ * @param {typeof NextResponse} response
  */
-export default async function middleware(_req) {
-  const response = NextResponse.next()
-
+const securityMiddleware = (response) => {
   Object.entries(securityHeaders).forEach(([key, value]) => {
     response.headers.set(key, value)
   })
 
   response.headers.set('Content-Security-Policy-Report-Only', csp)
+}
+
+/**
+ *
+ * @param {import('next/server').NextRequest} _req
+ */
+export default async function middleware(_req) {
+  const response = securityMiddleware(NextResponse.next())
 
   return response
 }
